@@ -1,0 +1,25 @@
+extends ../layout/layout.pug
+block content
+ title Thêm sách
+ h1.mb-3 Thêm sách mới
+ form(action="/products/create", method="POST", enctype="multipart/form-data")
+  .form-group
+    label(for="name") Tên sách
+    input#name.form-control(type="text", name="name")
+  .form-group
+    label(for="author") Tác giả
+    input#author.form-control(type="text", name="author")
+  .form-group
+    label(for="publisher") Nhà xuất bản
+    input#publisher.form-control(type="text", name="publisher")
+  .form-group
+    label(for="price") Giá tiền
+    input#price.form-control(type="text", name="price")
+  .form-group
+    label(for="description") Mô tả 
+    textarea#description.form-control(name="description", row="3")
+  .form-group
+    label(for="image") Tải ảnh lên  
+    input#image.form-control-file(type="file", name="image")
+  button.btn.btn-primary Thêm sách
+   

@@ -1,0 +1,3 @@
+mongosee dùng để kết nối vs database
+
+cloudinary dùng để upload ảnh lên cloud

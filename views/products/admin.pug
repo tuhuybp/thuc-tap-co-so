@@ -1,0 +1,35 @@
+extends ../layout/layout.pug
+block content
+ title Chỉnh sửa sách
+ h1 Quản trị viên
+  a.btn.btn-primary.ml-3(style="color: white;", href="/products/admin/create") Thêm sách
+ .d-flex.align-items-center.mb-2
+  form.ml-auto.form-inline(action="/products/admin/search", method="GET")
+    input#searchProduct.form-control(type='text', name='q', placeholder="Tìm sách")
+    button.btn.btn-primary.ml-2.form-control Tìm
+ table.table
+  thead
+   tr
+    th Ảnh
+    th Sách
+    th Sửa
+    th Xoá
+  tbody
+   each product in products
+    tr
+     td
+      img(src=product.image, alt="", style="width: 60px")
+     td= product.name
+     td
+      a.btn.btn-outline-primary(href="/products/admin/update") Sửa
+     td
+      a.btn.btn-outline-primary(href="/products/admin/delete") Xoá
+
+ script.
+    // Ghi nhớ value mà người dùng đã nhập vào
+    var searchInput = document.getElementById('searchProduct');
+    searchInput.value = sessionStorage.getItem('search');
+    searchInput.addEventListener('change', updateSessionStorage);
+    function updateSessionStorage() {
+    sessionStorage.setItem('search', searchInput.value);
+    }

@@ -1,0 +1,48 @@
+    body {
+        background-image: url('https://res.cloudinary.com/dkci2sg7x/image/upload/v1588961263/Cua-hang-sach/bg_zs0gj0.jpg');
+    }
+    .login-container {
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    
+    .login-form {
+        padding: 5%;
+        box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+        background-color: #fff;
+    }
+    
+    .login-form h1 {
+        text-align: center;
+        color: #000;
+    }
+    
+    .login-container form {
+        padding: 5%;
+    }
+    
+    .btnSubmit {
+        margin-left: 25%;
+        width: 50%;
+        padding: 1.5%;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .login-form .btnSubmit {
+        font-weight: 600;
+        color: #fff;
+        background-color: #0062cc;
+    }
+    
+    .login-form .ForgetPwd {
+        color: #0062cc;
+        font-weight: 600;
+        text-decoration: none;
+    }
+    
+    .login-form .signUp {
+        color: #0062cc;
+        font-weight: 600;
+        text-decoration: none;
+    }

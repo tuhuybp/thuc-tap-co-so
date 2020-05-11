@@ -1,0 +1,43 @@
+extends ../layout/layout.pug
+block content
+ title Danh sách sản phẩm
+ h1 Danh sách sản phẩm
+ .d-flex.align-items-center.mb-2
+  form.ml-auto.form-inline.mb-3(action="/products/search", method="GET")
+    input#searchProduct.form-control(type='text', name='q', placeholder="Tìm sách")
+    button.btn.btn-primary.ml-2.form-control Tìm
+ .row
+  each product in products
+   .mb-4.col-md-3.col-sm-6.col-6
+    a(href="view/" + product.id, style="color: black; text-decoration: none;")
+     .card
+      img.card-img-top(src= product.image, alt="")
+      .card-body
+       h5.card-title= product.name
+       p.card-text.mb-2(style="color:red; font-size:20px; float:left")= product.price
+       a.btn.btn-primary(href='#', style="float: right")
+        i.fas.fa-cart-plus
+
+ nav(aria-label='Page navigation example' class="mb-5")
+   
+    ul.pagination.justify-content-end
+        li.page-item.disabled
+        a.page-link(href='#', tabindex='-1', aria-disabled='true') &laquo;
+        li.page-item
+        a.page-link(href='?page=1') 1
+        li.page-item
+        a.page-link(href='?page=2') 2
+        li.page-item
+        a.page-link(href='?page=3') 3
+        li.page-item
+        a.page-link(href='#') &raquo;
+
+ script.
+    // Ghi nhớ value mà người dùng đã nhập vào
+    var searchInput = document.getElementById('searchProduct');
+    searchInput.value = sessionStorage.getItem('search');
+    searchInput.addEventListener('change', updateSessionStorage);
+    function updateSessionStorage() {
+    sessionStorage.setItem('search', searchInput.value);
+    }
+

@@ -1,0 +1,17 @@
+extends ../layout/layout.pug
+block content
+  h1.mb-4= product.name
+  .row.mb-2
+   .col-sm-12.col-md-3
+    img(src= product.image, alt="")
+   .col-sm-12.col-md-9.product
+    p.description= product.description
+    h5= "Tác giả: " + product.author
+    h5= product.publisher
+  .row.mb-5
+    .col
+    .col
+    h3.price= 'Giá: ' + product.price + ' đ'
+    a.btn.btn-outline-primary.btnAddToCart(href='#') Thêm vào giỏ hàng
+  
+  
